@@ -1,25 +1,14 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
-
+function makePartial(text, cloze) {
+	// change text to blanks where cloze is
+	// return that new text
+}
 exports.ClozeCard = function(text, cloze){
 
 	this.cloze = cloze,
-	this.partial = partial,
+	this.partial = makePartial(text, cloze),
 	this.fullText = full text;
 
 }
 
-var firstPresidentCloze = new ClozeCard(
-    "George Washington was the first president of the United States.", "George Washington");
-
-// "George Washington"
-console.log(firstPresidentCloze.cloze); 
-
-// " ... was the first president of the United States.
-console.log(firstPresidentCloze.partial); "
-
-// "George Washington was the first president of the United States.
-console.log(firstPresidentCloze.fullText): "
-
-// Should throw or log an error because "oops" doesn't appear in "This doesn't work"
-var brokenCloze = new ClozeCard("This doesn't work", "oops");
