@@ -1,33 +1,54 @@
 var fs = require("fs");
 var inquirer = require("inquirer");
 
-inquirer.prompt({
-    {
-        type: "list",
-        message: "Which type of Flashcard do you want to use??",
-        choices: ["Basic Flashcard", "Cloze Flashcard"],
-        name: "flashcard"
-    },
-
-    ]).then(function(response){
-        if(response.flashcard === "Basic Flashcard"){
-        console.log("you chose basic flashcard");
-        }
-        else(response.flashcard === "Cloze Flashcard"){
-        console.log("you chose cloze flashcard");
-    },
-    {
-        type: "list",
-        message: "Who was the first Universal Classic Monster of the talkie era?",
-        choices: ["Frankenstein", "Dracula", "The Wolf Man", "The Invisible Man"],
-        name: "flashcard"
-    },
-    {
-        type: "list",
-        message: "",
-        choices: [],
-        name: ""
-    },
+inquirer
+    .prompt({
+        {
+            type: "list",
+            message: "Which type of Flashcard do you want to use??",
+            choices: ["Basic Flashcard", "Cloze Flashcard"],
+            name: "flashcard"
+        },
+        {
+            type: "list",
+            message: "Who was the first Universal Classic Monster of the talkie era?",
+            choices: ["Frankenstein", "Dracula", "The Wolf Man", "The Invisible Man"],
+            name: "flashcard"
+        },
+        {
+            type: "list",
+            message: "Who was the director of both Frankenstein & The Bride of Frankenstein",
+            choices: ["Tod Browning", "William Wyler", "James Whale", "George A. Romero"],
+            name: "flashcard"
+        },
+        {
+            type: "list",
+            message: "Who played the titular character in the 1943 remake of The Phantom of the Opera?",
+            choices: ["Claude Rains", "Lon Chaney", "Boris Karloff", "Bela Lugosi"],
+            name: "flashcard"
+        },
+        {
+            type: "list",
+            message: "Who is Countess Marya Zaleska?",
+            choices: ["The Bride of Frankenstein", "Dracula's Daughter", "Dracula's Wife", "The Lady In The Lake"],
+            name: "flashcard"
+        },
+        {
+            type: "list",
+            message: "Which actor played The Mummy?",
+            choices: ["Claude Rains", "Lon Chaney", "Boris Karloff", "Bela Lugosi"],
+            name: "flashcard"
+        }])
+    .then(function(response) {
+            if (response.flashcard === "Basic Flashcard") {
+                console.log("you chose basic flashcard");
+            } else(response.flashcard === "Cloze Flashcard") {
+                    console.log("you chose cloze flashcard");
+                },
+                function(error, results, fields) {
+                    if (error) throw error;
+                }
+});
   
 // BASIC CARD //
 
