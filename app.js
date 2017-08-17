@@ -1,3 +1,34 @@
+var fs = require("fs");
+var inquirer = require("inquirer");
+
+inquirer.prompt({
+    {
+        type: "list",
+        message: "Which type of Flashcard do you want to use??",
+        choices: ["Basic Flashcard", "Cloze Flashcard"],
+        name: "flashcard"
+    },
+
+    ]).then(function(response){
+        if(response.flashcard === "Basic Flashcard"){
+        console.log("you chose basic flashcard");
+        }
+        else(response.flashcard === "Cloze Flashcard"){
+        console.log("you chose cloze flashcard");
+    },
+    {
+        type: "list",
+        message: "Who was the first Universal Classic Monster of the talkie era?",
+        choices: ["Frankenstein", "Dracula", "The Wolf Man", "The Invisible Man"],
+        name: "flashcard"
+    },
+    {
+        type: "list",
+        message: "",
+        choices: [],
+        name: ""
+    },
+  
 // BASIC CARD //
 
 // QUESTION #1:
