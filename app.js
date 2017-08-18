@@ -12,10 +12,10 @@ var firstMonster = new BasicCard(
     "Who was the first Universal Classic Monster of the talkie era?", "Dracula");
 
 // "Who was the first Universal Classic Monster of the talkie era?"
-console.log(firstMonster.front); 
+console.log(firstMonster.front);
 
 // "Dracula"
-console.log(firstMonster.back); 
+console.log(firstMonster.back);
 
 // QUESTION #2:
 
@@ -23,10 +23,10 @@ var secondMonster = new BasicCard(
     "Who was the director of both Frankenstein & The Bride of Frankenstein?", "James Whale");
 
 // "Who was the director of both Frankenstein & The Bride of Frankenstein?"
-console.log(secondMonster.front); 
+console.log(secondMonster.front);
 
 // "James Whale"
-console.log(secondMonster.back); 
+console.log(secondMonster.back);
 
 // QUESTION #3:
 
@@ -34,10 +34,10 @@ var thirdMonster = new BasicCard(
     "Who played the titular character in the 1943 remake of The Phantom of the Opera?", "Claude Rains");
 
 // "Who played the titular character in the 1943 remake of The Phantom of the Opera?"
-console.log(thirdMonster.front); 
+console.log(thirdMonster.front);
 
 // "Claude Rains"
-console.log(thirdMonster.back); 
+console.log(thirdMonster.back);
 
 // QUESTION #4:
 
@@ -45,10 +45,10 @@ var fourthMonster = new BasicCard(
     "Who is Countess Marya Zaleska?", "Dracula's Daughter");
 
 // "Who is Countess Marya Zaleska?"
-console.log(fourthMonster.front); 
+console.log(fourthMonster.front);
 
 // "Countess Marya Zaleska"
-console.log(fourthMonster.back); 
+console.log(fourthMonster.back);
 
 // QUESTION #5:
 
@@ -56,10 +56,10 @@ var fifthMonster = new BasicCard(
     "Which actor played The Mummy?", "Boris Karloff");
 
 // "Which actor played The Mummy?"
-console.log(fifthMonster.front); 
+console.log(fifthMonster.front);
 
 // "Boris Karloff"
-console.log(fifthMonster.back); 
+console.log(fifthMonster.back);
 
 // ~~~ ~~~ ~~~ //
 
@@ -73,10 +73,10 @@ var firstMonsterCloze = new ClozeCard(
     "Dracula was the first Universal Classic Monster of the talkie (sound) era", "Dracula");
 
 // "Dracula"
-console.log(firstMonster.cloze); 
+console.log(firstMonster.cloze);
 
 // " ... was the first Universal Classic Monster of the talkie (sound) era."
-console.log(firstMonsterCloze.partial); 
+console.log(firstMonsterCloze.partial);
 
 // "Dracula was the first Universal Classic Monster of the talkie (sound) era."
 console.log(firstMonsterCloze.fullText);
@@ -87,10 +87,10 @@ var secondMonsterCloze = new ClozeCard(
     "James Whale was the director of both Frankenstein & The Bride of Frankenstein.", "James Whale");
 
 // "James Whale"
-console.log(secondMonster.cloze); 
+console.log(secondMonster.cloze);
 
 // " ... was the director of both Frankenstein & The Bride of Frankenstein."
-console.log(secondMonsterCloze.partial); 
+console.log(secondMonsterCloze.partial);
 
 // "James Whale was the director of both Frankenstein & The Bride of Frankenstein."
 console.log(secondMonsterCloze.fullText);
@@ -101,10 +101,10 @@ var thirdMonsterCloze = new ClozeCard(
     "Claude Rains played the titular character in the 1943 remake of The Phantom of the Opera.", "Claude Rains");
 
 // "Claude Rains"
-console.log(thirdMonster.cloze); 
+console.log(thirdMonster.cloze);
 
 // " ... played the titular character in the 1943 remake of The Phantom of the Opera"
-console.log(thirdMonsterCloze.partial); 
+console.log(thirdMonsterCloze.partial);
 
 // "Claude Rains played the titular character in the 1943 remake of The Phantom of the Opera."
 console.log(thirdMonsterCloze.fullText);
@@ -115,10 +115,10 @@ var fourthMonsterCloze = new ClozeCard(
     "Countess Marya Zaleska is Dracula's Daughter", "Dracula's Daughter");
 
 // "Dracula's Daughter"
-console.log(fourthMonster.cloze); 
+console.log(fourthMonster.cloze);
 
 // " ... is Countess Marya Zaleska"
-console.log(fourthMonsterCloze.partial); 
+console.log(fourthMonsterCloze.partial);
 
 // "Countess Marya Zaleska is Dracula's Daughter"
 console.log(fourthMonsterCloze.fullText);
@@ -129,28 +129,62 @@ var fifthMonsterCloze = new ClozeCard(
     "Boris Karloff is the actor that played The Mummy", "Boris Karloff");
 
 // "Boris Karloff"
-console.log(fifthMonster.cloze); 
+console.log(fifthMonster.cloze);
 
 // " ... is the actor that played The Mummy"
-console.log(fifthMonsterCloze.partial); 
+console.log(fifthMonsterCloze.partial);
 
 // "Boris Karloff is the actor that played The Mummy"
 console.log(fifthMonsterCloze.fullText);
 
 inquirer
     .prompt([{
-            type: "list",
-            message: "Which type of Flashcard do you want to use??",
-            choices: ["Basic Flashcard", "Cloze Flashcard"],
-            name: "flashcard"
-        }])
+        type: "list",
+        message: "Which type of Flashcard do you want to use??",
+        choices: ["Basic Flashcard", "Cloze Flashcard"],
+        name: "flashcard"
+    }])
     .then(function(response) {
-            if (response.flashcard === "Basic Flashcard") {
-                console.log("you chose basic flashcard");
-            } else if(response.flashcard === "Cloze Flashcard") {
-                    console.log("you chose cloze flashcard");
-                }
+        if (response.flashcard === "Basic Flashcard") {
+            console.log("you chose basic flashcard");
+        } else if (response.flashcard === "Cloze Flashcard") {
+            console.log("you chose cloze flashcard");
+        }
+        inquirer
+            .prompt([{
+                type: "list",
+                message: "Who was the first Universal Classic Monster of the talkie (sound) era?",
+                choices: ["Frankenstein", "Dracula", "The Wolf-Man", "The Invisible Man"],
+                name: "flashcard"
+            }])
+        inquirer
+            .prompt([{
+                type: "list",
+                message: "Who was the the director of Frankenstein & The Bride of Frankenstein?",
+                choices: ["Fritz Lang", "Tod Browning", "James Whale", "William Castle"],
+                name: "flashcard"
+            }])
+        inquirer
+            .prompt([{
+                type: "list",
+                message: "Who played the titular character in the 1943 remake of The Phantom of the Opera?",
+                choices: ["Claude Rains", "Lon Chaney", "Boris Karloff", "Bela Lugosi"],
+                name: "flashcard"
+            }])
+        inquirer
+            .prompt([{
+                type: "list",
+                message: "Who is Countess Marya Zaleska?",
+                choices: ["The Bride of Frankenstein", "Dracula's Daughter", "She-Wolf of London", "Dracula's Wife"],
+                name: "flashcard"
+            }])
+        inquirer
+            .prompt([{
+                type: "list",
+                message: "What is the name of the actor playing the titular character in The Mummy?",
+                choices: ["Boris Karloff", "Bela Lugosi", "Peter Cushing", "Lon Chaney, Jr."],
+                name: "flashcard"
+            }])
 
 
-
-});
+    });
