@@ -150,12 +150,7 @@ inquirer
             } else if(response.flashcard === "Cloze Flashcard") {
                     console.log("you chose cloze flashcard");
                 }
-    .prompt([{
-            type: "list",
-            message: "Which type of Flashcard do you want to use??",
-            choices: ["Basic Flashcard", "Cloze Flashcard"],
-            name: "flashcard"
-        }])
+
 
 
 });
